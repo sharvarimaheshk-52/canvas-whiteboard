@@ -30,6 +30,7 @@ const stopDrawing =(event)=>{
 }
 
 const drawLine =(event)=>{
+if (isMouseDown){
     const newX=event.offsetX;
     const newY=event.offsetY;
     context.beginPath();
@@ -37,7 +38,8 @@ const drawLine =(event)=>{
     context.lineTo(newX,newY);
     context.stroke();
     x=newX;
-    y=newY;
+    y=newY;}
+    
 }
 
 paintCanvas.addEventListener("mousedown",startDrawing)
